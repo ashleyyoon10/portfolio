@@ -44,7 +44,7 @@
     .nav-mobile-icons a {
         display: flex;
         align-items: center;
-        color: #1a1a1a;
+        color: #ffffff;
     }
 
     .nav-left {
@@ -52,15 +52,15 @@
         top: 60px;
         left: 0;
         width: 100%;
-        background: #ffffff;
+        background: #1a1a1a;
         flex-direction: column;
         padding: var(--spacing-md);
-        border-bottom: 1px solid #f5f5f5;
+        border-bottom: none;
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
         transition: all var(--transition-base);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         z-index: 99;
     }
 
@@ -79,7 +79,7 @@
         display: block;
         padding: var(--spacing-sm) 0;
         font-size: var(--font-size-h4);
-        color: #1a1a1a;
+        color: #ffffff;
     }
 
     /* About page */
@@ -153,17 +153,17 @@
         font-size: var(--font-size-h3);
     }
 
-    /* Hero section — stack vertically on mobile */
+    /* Hero section — stack vertically, left-aligned on mobile */
     .hero-split {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: var(--spacing-md);
-        text-align: center;
+        text-align: left;
     }
 
     .hero-name {
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
         padding-right: 0;
     }
 
@@ -172,7 +172,7 @@
     }
 
     .hero-bio {
-        text-align: center;
+        text-align: left;
         padding-left: 0;
     }
 
@@ -180,15 +180,20 @@
         font-size: var(--font-size-h4);
     }
 
-    /* Project pages — single column grid on mobile */
+    /* Project pages — single column grid on mobile, full width */
     .project-image-grid {
         grid-template-columns: 1fr;
         max-width: 100%;
     }
 
-    /* Project cover — full width on mobile */
-    .project-cover img {
-        width: 100%;
+    /* All project page images and videos full width on mobile */
+    .project-cover img,
+    .project-gallery img,
+    .project-video img,
+    .project-video video {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
     /* Carousel — smaller cards on mobile */

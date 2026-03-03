@@ -1,10 +1,20 @@
 // Utility functions
 
-// Always start at top on page load
+// Always start at top on page load — including bfcache restores
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 window.scrollTo(0, 0);
+
+// pageshow fires for both normal loads AND bfcache restores (back/forward)
+window.addEventListener('pageshow', function (e) {
+    window.scrollTo(0, 0);
+});
+
+// DOMContentLoaded safety net — ensures scroll after layout is resolved
+document.addEventListener('DOMContentLoaded', function () {
+    window.scrollTo(0, 0);
+});
 
 // ============================================
 // SMOOTH SCROLL FOR ANCHOR LINKS
