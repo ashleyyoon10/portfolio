@@ -631,6 +631,11 @@
     display: block;
 }
 
+/* Other Projects section — extra top spacing for visual separation */
+section:has(.project-carousel-wrapper) {
+    padding-top: var(--spacing-xxl);
+}
+
 /* Other Projects Carousel */
 .project-carousel-wrapper {
     position: relative;
@@ -651,9 +656,21 @@
 }
 
 .project-carousel .project-card-link {
-    flex: 0 0 calc(33.33% - 1rem);
-    min-width: 260px;
+    flex: 0 0 calc(24% - 1rem);
+    min-width: 200px;
     scroll-snap-align: start;
+}
+
+.project-carousel .project-title {
+    font-size: var(--font-size-body);
+}
+
+.project-carousel .project-description {
+    font-size: var(--font-size-small);
+}
+
+.project-carousel .project-info {
+    padding: var(--spacing-xs) 0;
 }
 
 .carousel-nav {

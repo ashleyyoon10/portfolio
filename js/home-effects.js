@@ -1,7 +1,8 @@
-// Home page cursor tracker - small light gray circle
+// Home page cursor tracker - small light gray circle (desktop only)
 
 const canvas = document.getElementById('ripple-canvas');
-if (canvas) {
+const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+if (canvas && !isTouchDevice) {
     const ctx = canvas.getContext('2d');
     let mouseX = -100;
     let mouseY = -100;

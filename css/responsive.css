@@ -13,14 +13,15 @@
         --spacing-xxl: 4rem;
     }
 
-    /* Mobile navigation */
-    .menu-toggle {
-        display: block;
+    /* Mobile navigation — always black header */
+    .site-header {
+        background: #1a1a1a;
+        border-bottom: none;
     }
 
-    /* Keep menu toggle black in dark mode */
-    [data-theme="dark"] .menu-toggle {
-        color: #1a1a1a;
+    .menu-toggle {
+        display: block;
+        color: #ffffff;
     }
 
     /* Keep logo pinned to center column even when nav-left is fixed/out of flow */
@@ -153,31 +154,13 @@
         font-size: var(--font-size-h3);
     }
 
-    /* Hero section — stack vertically, left-aligned on mobile */
-    .hero-split {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing-md);
-        text-align: left;
-    }
-
-    .hero-name {
-        align-items: flex-start;
-        text-align: left;
-        padding-right: 0;
-    }
-
+    /* Hero section — side-by-side on mobile, scaled down */
     .hero-name span {
-        font-size: 3.5rem;
-    }
-
-    .hero-bio {
-        text-align: left;
-        padding-left: 0;
+        font-size: 2rem;
     }
 
     .hero-bio p {
-        font-size: var(--font-size-h4);
+        font-size: var(--font-size-body);
     }
 
     /* Project pages — single column grid on mobile, full width */
@@ -272,11 +255,11 @@
     }
 
     .hero-name span {
-        font-size: 2.6rem;
+        font-size: 1.5rem;
     }
 
     .hero-bio p {
-        font-size: var(--font-size-body);
+        font-size: var(--font-size-small);
     }
 
     /* Full-width carousel cards on very small screens */
