@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Ashley Yoon - Graphic designer with marketing and mass communications background.">
+    <meta name="author" content="Ashley Yoon">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>About | Ashley Yoon</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <canvas id="ripple-canvas"></canvas>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <nav class="main-nav">
+            <ul class="nav-left">
+                <li><a href="work.html">Work</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Ashley Yoon">
+            </a>
+            <div class="nav-right">
+                <a href="https://www.linkedin.com/in/ashleyyoon10/" target="_blank" rel="noopener" aria-label="LinkedIn" class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                </a>
+                <a href="#" aria-label="Email" class="nav-icon email-copy">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="2 4 20 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section class="py-lg">
+            <div class="container">
+                <div class="about-split">
+                    <div class="about-text">
+                        <h1>About Me</h1>
+                        <p>
+                            I'm a graphic designer focused on branding and visual storytelling, with a background in Graphic Design, Marketing, and Mass Communication from Lehigh University. I'm based in the New Jersey / New York Metro area.
+                        </p>
+                        <p>
+                            I'm especially interested in creating cohesive brand systems through print, packaging, layout, and other tangible design work. I enjoy building visual "universes" that help people and brands find their voice and express their stories in meaningful ways.
+                        </p>
+                        <p>
+                            My goal is to create work that feels intentional, gets noticed, and improves the end user's experience, whether through function, mood, or a moment of visual delight. When I'm not designing, you can find me scrapbooking, traveling, or eating pasta!
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="assets/assets/Ashley headshot.png" alt="Ashley Yoon">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section class="py-lg">
+            <div class="container" style="max-width: 900px; margin: 0 auto;">
+                <iframe src="assets/assets/ashley-yoon-resume.pdf" width="100%" height="1100px" style="border: none;"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Ashley Yoon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top"></button>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/home-effects.js"></script>
+    <script src="js/back-to-top.js"></script>
+    <script src="js/theme-toggle.js"></script>
+</body>
+</html>

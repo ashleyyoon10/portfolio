@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LiveLink Entertainment - Graphic Design Internship by Ashley Yoon">
+    <meta name="author" content="Ashley Yoon">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <title>LiveLink Entertainment | Ashley Yoon</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <canvas id="ripple-canvas"></canvas>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <nav class="main-nav">
+            <ul class="nav-left">
+                <li><a href="../work.html" class="active">Work</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/logo.png" alt="Ashley Yoon">
+            </a>
+            <div class="nav-right">
+                <a href="https://www.linkedin.com/in/ashleyyoon10/" target="_blank" rel="noopener" aria-label="LinkedIn" class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                </a>
+                <a href="#" aria-label="Email" class="nav-icon email-copy">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="2 4 20 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Project Header -->
+        <section class="project-header">
+            <div class="container-narrow">
+                <h1>LiveLink Entertainment</h1>
+                <p class="project-tag">Graphic Design · Internship</p>
+                <p class="project-description-full">Translated brand assets into a cohesive visual identity system — establishing typography, color, and layout hierarchy. Designed social media templates, printed banners, and campaign assets for digital and event marketing.</p>
+            </div>
+        </section>
+
+        <!-- Cover Image -->
+        <section class="project-cover">
+            <div class="container">
+                <img src="../images/projects/ll-banner.png" alt="LiveLink Entertainment banner" loading="eager">
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="project-gallery">
+            <div class="container">
+                <div class="project-image-grid" style="margin-top: 0.75rem;">
+                    <div class="project-image-item">
+                        <img src="../images/projects/ll-feed1.png" alt="LiveLink social media feed" loading="lazy">
+                    </div>
+                    <div class="project-image-item">
+                        <img src="../images/projects/ll-feed2.png" alt="LiveLink social media feed" loading="lazy">
+                    </div>
+                    <div class="project-image-item">
+                        <img src="../images/projects/ll-flyers1.png" alt="LiveLink flyers" loading="lazy">
+                    </div>
+                    <div class="project-image-item">
+                        <img src="../images/projects/ll-flyers2.png" alt="LiveLink flyers" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Figma Presentation -->
+        <section class="project-gallery">
+            <div class="container">
+                <div style="margin-top: 0.75rem; display: flex; justify-content: center;">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/slides/BiDH2wNdH4qk1WHDbiM6n7/Internship-Final-Presentation?node-id=14-51&embed-host=share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Projects -->
+        <section class="py-lg" style="border-top: 1px solid var(--color-light-gray);">
+            <div class="container">
+                <h2 class="section-centered mb-lg">Other Projects</h2>
+                <div class="project-carousel-wrapper">
+                    <div class="project-carousel">
+                        <a href="odds-ends.html" class="project-card-link">
+                            <article class="project-card">
+                                <div class="project-image"><img src="../images/projects/odds-ends-screens.jpg" alt="Odds &amp; Ends" loading="lazy"></div>
+                                <div class="project-info">
+                                    <h3 class="project-title">Odds &amp; Ends</h3>
+                                    <p class="project-description">Mobile e-commerce UX design</p>
+                                    <span class="project-category">UX Design</span>
+                                </div>
+                            </article>
+                        </a>
+                        <a href="bloomorphosis.html" class="project-card-link">
+                            <article class="project-card">
+                                <div class="project-image"><img src="../images/projects/bloom-posters.png" alt="Bloomorphosis" loading="lazy"></div>
+                                <div class="project-info">
+                                    <h3 class="project-title">Bloomorphosis</h3>
+                                    <p class="project-description">Festival branding &amp; packaging design</p>
+                                    <span class="project-category">Branding · Packaging</span>
+                                </div>
+                            </article>
+                        </a>
+                        <a href="snackstar.html" class="project-card-link">
+                            <article class="project-card">
+                                <div class="project-image"><img src="../images/projects/ss-pouches.png" alt="snackstar" loading="lazy"></div>
+                                <div class="project-info">
+                                    <h3 class="project-title">snackstar</h3>
+                                    <p class="project-description">Bold packaging for a modern snack brand</p>
+                                    <span class="project-category">Branding · Packaging</span>
+                                </div>
+                            </article>
+                        </a>
+                        <a href="neuro.html" class="project-card-link">
+                            <article class="project-card">
+                                <div class="project-image"><img src="../images/projects/neuro-flyer.jpg" alt="Neuro" loading="lazy"></div>
+                                <div class="project-info">
+                                    <h3 class="project-title">Neuro</h3>
+                                    <p class="project-description">Digital marketing &amp; product design · Internship</p>
+                                    <span class="project-category">Marketing Design</span>
+                                </div>
+                            </article>
+                        </a>
+                        <a href="gala.html" class="project-card-link">
+                            <article class="project-card">
+                                <div class="project-image"><img src="../images/projects/oc-flat-lay-mockup.png" alt="Ocean Conservancy Gala" loading="lazy"></div>
+                                <div class="project-info">
+                                    <h3 class="project-title">Ocean Conservancy Gala</h3>
+                                    <p class="project-description">Sophisticated event invitation design</p>
+                                    <span class="project-category">Branding</span>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn carousel-btn-prev" aria-label="Previous">&lt;</button>
+                        <button class="carousel-btn carousel-btn-next" aria-label="Next">&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Ashley Yoon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top"></button>
+
+    <!-- Scripts -->
+    <script src="../js/navigation.js"></script>
+    <script src="../js/project-page.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/home-effects.js"></script>
+    <script src="../js/back-to-top.js"></script>
+    <script src="../js/theme-toggle.js"></script>
+</body>
+</html>
