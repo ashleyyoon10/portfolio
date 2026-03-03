@@ -152,6 +152,84 @@
     .featured-project-info h3 {
         font-size: var(--font-size-h3);
     }
+
+    /* Hero section — stack vertically on mobile */
+    .hero-split {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+
+    .hero-name {
+        align-items: center;
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .hero-name span {
+        font-size: 3.5rem;
+    }
+
+    .hero-bio {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .hero-bio p {
+        font-size: var(--font-size-h4);
+    }
+
+    /* Project pages — single column grid on mobile */
+    .project-image-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    /* Project cover — full width on mobile */
+    .project-cover img {
+        width: 100%;
+    }
+
+    /* Carousel — smaller cards on mobile */
+    .project-carousel .project-card-link {
+        flex: 0 0 75vw;
+        min-width: 220px;
+    }
+
+    /* Hide social icons from header on mobile — they live in the dropdown */
+    .nav-right .nav-icon {
+        display: none;
+    }
+
+    /* Theme toggle — tuck in closer on mobile */
+    .theme-toggle {
+        top: 68px;
+        right: 12px;
+        width: 36px;
+        height: 80px;
+    }
+
+    /* Responsive iframes — PDF and Figma embeds */
+    iframe {
+        width: 100% !important;
+    }
+
+    .project-gallery iframe,
+    .py-lg iframe {
+        height: 400px;
+    }
+
+    /* About page — resume iframe shorter on mobile */
+    .about-resume-iframe {
+        height: 600px;
+    }
+
+    /* Work page filter — stack label above dropdown */
+    .gallery-filter {
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
 }
 
 /* ============================================
@@ -186,6 +264,25 @@
     /* Even more compact spacing on very small screens */
     .gallery-grid {
         gap: var(--spacing-sm);
+    }
+
+    .hero-name span {
+        font-size: 2.6rem;
+    }
+
+    .hero-bio p {
+        font-size: var(--font-size-body);
+    }
+
+    /* Full-width carousel cards on very small screens */
+    .project-carousel .project-card-link {
+        flex: 0 0 85vw;
+    }
+
+    /* Shorter iframes on small mobile */
+    .project-gallery iframe,
+    .py-lg iframe {
+        height: 300px;
     }
 }
 
