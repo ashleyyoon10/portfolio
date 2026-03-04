@@ -864,7 +864,8 @@ section:has(.project-carousel-wrapper) {
     opacity: 1;
 }
 
-.project-card-link:hover .project-title {
+.project-card-link:hover .project-title,
+.project-card:hover .project-title {
     color: #3a7a5c;
 }
 
@@ -1001,7 +1002,7 @@ section:has(.project-carousel-wrapper) {
 }
 
 .theme-toggle:hover {
-    background: var(--color-light-gray);
+    background: rgba(58, 122, 92, 0.1);
 }
 
 /* ON / OFF labels */

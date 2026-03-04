@@ -37,7 +37,7 @@ if (canvas && !isTouchDevice) {
         if (mouseX >= 0 && mouseY >= 0) {
             ctx.beginPath();
             ctx.arc(mouseX, mouseY, 9, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(180, 180, 180, 0.5)';
+            ctx.fillStyle = 'rgba(58, 122, 92, 0.45)';
             ctx.fill();
         }
 
