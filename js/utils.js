@@ -1,5 +1,23 @@
 // Utility functions
 
+// ============================================
+// SCROLL PROGRESS BAR
+// ============================================
+
+(function () {
+    const bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    const header = document.querySelector('.site-header');
+    if (header) header.appendChild(bar);
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        bar.style.width = pct + '%';
+    }, { passive: true });
+})();
+
 // Always start at top on page load — including bfcache restores
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';

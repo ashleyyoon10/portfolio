@@ -13,15 +13,15 @@
         --spacing-xxl: 4rem;
     }
 
-    /* Mobile navigation — always black header */
+    /* Mobile navigation — white header, black text */
     .site-header {
-        background: #1a1a1a;
-        border-bottom: none;
+        background: #ffffff;
+        border-bottom: 1px solid #f5f5f5;
     }
 
     .menu-toggle {
         display: block;
-        color: #ffffff;
+        color: #1a1a1a;
     }
 
     /* Keep logo pinned to center column even when nav-left is fixed/out of flow */
@@ -45,7 +45,7 @@
     .nav-mobile-icons a {
         display: flex;
         align-items: center;
-        color: #ffffff;
+        color: #1a1a1a;
     }
 
     .nav-left {
@@ -53,15 +53,15 @@
         top: 60px;
         left: 0;
         width: 100%;
-        background: #1a1a1a;
+        background: #ffffff;
         flex-direction: column;
         padding: var(--spacing-md);
-        border-bottom: none;
+        border-bottom: 1px solid #f5f5f5;
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
         transition: all var(--transition-base);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         z-index: 99;
     }
 
@@ -80,7 +80,7 @@
         display: block;
         padding: var(--spacing-sm) 0;
         font-size: var(--font-size-h4);
-        color: #ffffff;
+        color: #1a1a1a;
     }
 
     /* About page */
@@ -155,6 +155,12 @@
     }
 
     /* Hero section — side-by-side on mobile, scaled down */
+    .hero-split {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
     .hero-name span {
         font-size: 2rem;
     }
@@ -192,8 +198,8 @@
 
     /* Theme toggle — tuck in closer on mobile */
     .theme-toggle {
-        top: 68px;
-        right: 12px;
+        top: 76px;
+        right: 8px;
         width: 36px;
         height: 80px;
     }
