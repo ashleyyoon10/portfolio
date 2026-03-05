@@ -59,7 +59,7 @@ document.getElementById('pdf-popup')?.addEventListener('click', (e) => {
         '<button class="img-lightbox-next" aria-label="Next"></button>';
     document.body.appendChild(lb);
 
-    const lbImg  = lb.querySelector('.img-lightbox-img');
+    const lbImg   = lb.querySelector('.img-lightbox-img');
     const lbClose = lb.querySelector('.img-lightbox-close');
     const lbPrev  = lb.querySelector('.img-lightbox-prev');
     const lbNext  = lb.querySelector('.img-lightbox-next');
@@ -67,24 +67,42 @@ document.getElementById('pdf-popup')?.addEventListener('click', (e) => {
     let images = [];
     let idx = 0;
 
+    // Zoom state
+    let scale = 1, panX = 0, panY = 0;
+
+    function clampScale(s) { return Math.min(Math.max(s, 1), 5); }
+
+    function applyTransform() {
+        lbImg.style.transform = `scale(${scale}) translate(${panX / scale}px, ${panY / scale}px)`;
+        lbImg.style.cursor = scale > 1 ? 'grab' : 'default';
+    }
+
+    function resetZoom() {
+        scale = 1; panX = 0; panY = 0;
+        applyTransform();
+    }
+
     function open(i) {
         idx = i;
         lbImg.src = images[idx].src;
         lbImg.alt = images[idx].alt;
         lb.classList.add('active');
         document.body.style.overflow = 'hidden';
+        resetZoom();
         updateNav();
     }
 
     function close() {
         lb.classList.remove('active');
         document.body.style.overflow = '';
+        resetZoom();
     }
 
     function goTo(i) {
         idx = i;
         lbImg.src = images[idx].src;
         lbImg.alt = images[idx].alt;
+        resetZoom();
         updateNav();
     }
 
@@ -108,11 +126,77 @@ document.getElementById('pdf-popup')?.addEventListener('click', (e) => {
     lbPrev.addEventListener('click', () => { if (idx > 0) goTo(idx - 1); });
     lbNext.addEventListener('click', () => { if (idx < images.length - 1) goTo(idx + 1); });
 
+    // Keyboard: arrows, ESC, +/-
     document.addEventListener('keydown', e => {
         if (!lb.classList.contains('active')) return;
-        if (e.key === 'Escape') close();
-        if (e.key === 'ArrowLeft'  && idx > 0) goTo(idx - 1);
-        if (e.key === 'ArrowRight' && idx < images.length - 1) goTo(idx + 1);
+        if (e.key === 'Escape') { close(); return; }
+        if (e.key === 'ArrowLeft'  && idx > 0) { goTo(idx - 1); return; }
+        if (e.key === 'ArrowRight' && idx < images.length - 1) { goTo(idx + 1); return; }
+        if (e.key === '+' || e.key === '=') { scale = clampScale(scale + 0.25); applyTransform(); }
+        if (e.key === '-') { scale = clampScale(scale - 0.25); if (scale === 1) { panX = 0; panY = 0; } applyTransform(); }
+    });
+
+    // Trackpad pinch / ctrl+wheel
+    lb.addEventListener('wheel', e => {
+        if (!lb.classList.contains('active')) return;
+        e.preventDefault();
+        const delta = e.deltaY > 0 ? -0.12 : 0.12;
+        scale = clampScale(scale + delta);
+        if (scale === 1) { panX = 0; panY = 0; }
+        applyTransform();
+    }, { passive: false });
+
+    // Touch pinch zoom
+    let touchDist = null;
+    lb.addEventListener('touchstart', e => {
+        if (e.touches.length === 2) {
+            touchDist = Math.hypot(
+                e.touches[0].clientX - e.touches[1].clientX,
+                e.touches[0].clientY - e.touches[1].clientY
+            );
+        }
+    }, { passive: true });
+
+    lb.addEventListener('touchmove', e => {
+        if (e.touches.length !== 2 || touchDist === null) return;
+        e.preventDefault();
+        const newDist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+        );
+        scale = clampScale(scale * (newDist / touchDist));
+        touchDist = newDist;
+        applyTransform();
+    }, { passive: false });
+
+    lb.addEventListener('touchend', e => {
+        if (e.touches.length < 2) touchDist = null;
+        if (scale < 1.05) { scale = 1; panX = 0; panY = 0; applyTransform(); }
+    }, { passive: true });
+
+    // Mouse drag to pan when zoomed
+    let isDragging = false, dragStartX, dragStartY, dragStartPanX, dragStartPanY;
+
+    lbImg.addEventListener('mousedown', e => {
+        if (scale <= 1) return;
+        isDragging = true;
+        dragStartX = e.clientX; dragStartY = e.clientY;
+        dragStartPanX = panX;   dragStartPanY = panY;
+        lbImg.style.cursor = 'grabbing';
+        e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', e => {
+        if (!isDragging) return;
+        panX = dragStartPanX + (e.clientX - dragStartX);
+        panY = dragStartPanY + (e.clientY - dragStartY);
+        applyTransform();
+    });
+
+    document.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        lbImg.style.cursor = scale > 1 ? 'grab' : 'default';
     });
 })();
 

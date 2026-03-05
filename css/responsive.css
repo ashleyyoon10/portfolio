@@ -162,11 +162,11 @@
     }
 
     .hero-name span {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
     .hero-bio p {
-        font-size: var(--font-size-body);
+        font-size: 1.1rem;
     }
 
     /* Project pages — single column grid on mobile, full width */
@@ -261,11 +261,11 @@
     }
 
     .hero-name span {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .hero-bio p {
-        font-size: var(--font-size-small);
+        font-size: var(--font-size-body);
     }
 
     /* Full-width carousel cards on very small screens */
