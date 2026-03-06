@@ -32,7 +32,7 @@ const emailLink = document.querySelector('.email-copy');
 if (emailLink) {
     emailLink.addEventListener('click', (e) => {
         e.preventDefault();
-        navigator.clipboard.writeText('ashleyyoon10@gmail.com').then(() => {
+        navigator.clipboard.writeText('ashleyyoondesign@gmail.com').then(() => {
             const original = emailLink.getAttribute('aria-label');
             emailLink.setAttribute('aria-label', 'Copied!');
             const tooltip = document.createElement('span');
@@ -55,7 +55,7 @@ if (emailLink) {
     const li = document.createElement('li');
     li.className = 'nav-mobile-icons';
     li.innerHTML = `
-        <a href="https://www.linkedin.com/in/ashleyyoon10/" target="_blank" rel="noopener" aria-label="LinkedIn" class="nav-icon">
+        <a href="https://www.linkedin.com/in/ashleyyoondesign/" target="_blank" rel="noopener" aria-label="LinkedIn" class="nav-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
         </a>
         <a href="#" aria-label="Email" class="nav-icon nav-mobile-email">
@@ -67,7 +67,7 @@ if (emailLink) {
     if (mobileEmail) {
         mobileEmail.addEventListener('click', (e) => {
             e.preventDefault();
-            navigator.clipboard.writeText('ashleyyoon10@gmail.com').then(() => {
+            navigator.clipboard.writeText('ashleyyoondesign@gmail.com').then(() => {
                 const orig = mobileEmail.getAttribute('aria-label');
                 mobileEmail.setAttribute('aria-label', 'Copied!');
                 const tooltip = document.createElement('span');
