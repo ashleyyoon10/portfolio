@@ -31,7 +31,7 @@
                 <li><a href="../work.html" class="active">Work</a></li>
                 <li><a href="../about.html">About</a></li>
             </ul>
-            <a href="../index.html" class="nav-logo">
+            <a href="../work.html" class="nav-logo">
                 <img src="../images/logo.png" alt="Ashley Yoon">
             </a>
             <div class="nav-right">
@@ -63,7 +63,7 @@
         <!-- Cover Image -->
         <section class="project-cover" style="margin-top: var(--spacing-lg);">
             <div class="container">
-                <img src="../images/projects/em-notif.png" alt="Emote Mail notification screen showing AI-generated emotion tags on email previews" loading="eager">
+                <img src="../images/projects/em-notif.png" alt="Emote Mail notification screen showing AI-generated emotion tags on email previews" loading="eager" fetchpriority="high">
             </div>
         </section>
 
@@ -96,7 +96,7 @@
         <!-- Onboarding Video -->
         <section class="project-video">
             <div class="container">
-                <video controls style="width: 80%; display: block; margin: 0.75rem auto 0;">
+                <video controls preload="none" style="width: 80%; display: block; margin: 0.75rem auto 0;">
                     <source src="../images/projects/em-onboarding.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -106,7 +106,7 @@
         <!-- Prototype Video -->
         <section class="project-video">
             <div class="container">
-                <video controls style="width: 80%; display: block; margin: 0.75rem auto 0;">
+                <video controls preload="none" style="width: 80%; display: block; margin: 0.75rem auto 0;">
                     <source src="../images/projects/em-prototype.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -215,6 +215,5 @@
     <script src="../js/utils.js"></script>
     <script src="../js/home-effects.js"></script>
     <script src="../js/back-to-top.js"></script>
-    <script src="../js/theme-toggle.js"></script>
 </body>
 </html>

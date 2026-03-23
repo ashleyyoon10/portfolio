@@ -2,7 +2,7 @@
 
 body {
     background: var(--color-background);
-    padding-top: 70px; /* Account for fixed header */
+    padding-top: 90px; /* Account for fixed header + nav top padding */
 }
 
 /* Container system */

@@ -31,7 +31,7 @@
                 <li><a href="work.html" class="active">Work</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
-            <a href="index.html" class="nav-logo">
+            <a href="work.html" class="nav-logo">
                 <img src="images/logo.png" alt="Ashley Yoon">
             </a>
             <div class="nav-right">
@@ -49,24 +49,10 @@
     <!-- Main Content -->
     <main>
         <!-- Gallery Section -->
-        <section class="py-lg">
+        <section style="padding: var(--spacing-md) 0;">
             <div class="container">
-                <h1 class="section-centered">Selected Work</h1>
-
-                <!-- Filter Dropdown -->
-                <div class="gallery-filter mt-lg">
-                    <label for="category-filter">Filter by:</label>
-                    <select id="category-filter" class="dropdown-filter">
-                        <option value="all">All Work</option>
-                        <option value="branding">Branding</option>
-                        <option value="packaging">Packaging</option>
-                        <option value="ux">UX Design</option>
-                        <option value="marketing">Marketing Design</option>
-                    </select>
-                </div>
-
                 <!-- Project Grid -->
-                <div class="gallery-grid">
+                <div class="gallery-grid" style="margin-top: 0;">
                     <!-- Emote Mail -->
                     <a href="projects/emote-mail.html" style="display: contents;">
                     <article class="project-card" data-category="ux" data-title="Emote Mail" data-description="AI sentiment scanning to automatically tag and categorize emails by urgency and emotional tone." data-image="images/projects/em-notif.png">
@@ -222,6 +208,5 @@
     <script src="js/utils.js"></script>
     <script src="js/home-effects.js"></script>
     <script src="js/back-to-top.js"></script>
-    <script src="js/theme-toggle.js"></script>
 </body>
 </html>
