@@ -44,13 +44,10 @@
     --transition-slow: 0.5s ease;
 }
 
-/* Smooth theme transition on the page */
-html {
-    transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-body, body * {
-    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+/* Theme transitions — only active after first paint (prevents flash on page load) */
+html.theme-ready body,
+html.theme-ready .site-header {
+    transition: background-color var(--transition-base);
 }
 
 /* Dark mode - Lights Off */

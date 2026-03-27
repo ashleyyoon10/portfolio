@@ -55,12 +55,14 @@ if (emailLink) {
     const li = document.createElement('li');
     li.className = 'nav-mobile-icons';
     li.innerHTML = `
-        <a href="https://www.linkedin.com/in/ashleyyoondesign/" target="_blank" rel="noopener" aria-label="LinkedIn" class="nav-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
-        </a>
-        <a href="#" aria-label="Email" class="nav-icon nav-mobile-email">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="2 4 20 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </a>
+        <div class="nav-mobile-icon-row">
+            <a href="https://www.linkedin.com/in/ashleyyoondesign/" target="_blank" rel="noopener" aria-label="LinkedIn" class="nav-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+            </a>
+            <a href="#" aria-label="Email" class="nav-icon nav-mobile-email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="2 4 20 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+        </div>
     `;
     navList.appendChild(li);
     const mobileEmail = li.querySelector('.nav-mobile-email');
