@@ -1,44 +1,43 @@
-// Theme Toggle - Lights On / Lights Off
+// Theme Toggle — pill with sliding circle
 
-// Get saved theme from localStorage or default to light
+// Apply saved theme immediately to prevent flash
 const savedTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', savedTheme);
 
-// Create and add theme toggle button
-const themeToggle = document.createElement('button');
-themeToggle.className = 'theme-toggle';
-themeToggle.setAttribute('aria-label', 'Toggle dark mode');
-themeToggle.setAttribute('title', savedTheme === 'dark' ? 'Lights on' : 'Lights off');
+document.addEventListener('DOMContentLoaded', () => {
+    const navRight = document.querySelector('.nav-right');
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!navRight) return;
 
-// ON label
-const onLabel = document.createElement('span');
-onLabel.className = 'theme-toggle-on';
-onLabel.textContent = 'ON';
+    // Build pill toggle
+    const btn = document.createElement('button');
+    btn.className = 'theme-toggle-pill';
+    btn.setAttribute('aria-label', 'Toggle dark mode');
 
-// Faceplate + rocker
-const plate = document.createElement('span');
-plate.className = 'toggle-plate';
-const rocker = document.createElement('span');
-rocker.className = 'toggle-rocker';
-plate.appendChild(rocker);
+    const circle = document.createElement('span');
+    circle.className = 'theme-toggle-pill__circle';
+    btn.appendChild(circle);
 
-// OFF label
-const offLabel = document.createElement('span');
-offLabel.className = 'theme-toggle-off';
-offLabel.textContent = 'OFF';
+    // Insert before menu-toggle (mobile hamburger) if it exists, else append
+    if (menuToggle) {
+        navRight.insertBefore(btn, menuToggle);
+    } else {
+        navRight.appendChild(btn);
+    }
 
-themeToggle.appendChild(onLabel);
-themeToggle.appendChild(plate);
-themeToggle.appendChild(offLabel);
+    // Sync visual state
+    function syncState(theme) {
+        btn.classList.toggle('is-dark', theme === 'dark');
+        btn.setAttribute('title', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    }
 
-document.body.appendChild(themeToggle);
+    syncState(savedTheme);
 
-// Toggle theme on click
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    themeToggle.setAttribute('title', newTheme === 'dark' ? 'Lights on' : 'Lights off');
+    btn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        syncState(next);
+    });
 });
