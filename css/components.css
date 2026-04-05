@@ -978,6 +978,8 @@ section:has(.project-carousel-wrapper) {
     align-items: center;
     transition: background var(--transition-base), border-color var(--transition-base);
     flex-shrink: 0;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .theme-toggle-pill:hover {
