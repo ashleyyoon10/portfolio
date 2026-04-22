@@ -218,6 +218,7 @@
     opacity: 0;
     animation: fadeIn 0.5s forwards;
     transition: transform var(--transition-base);
+    will-change: opacity;
 }
 
 .project-card.hidden {
@@ -1016,5 +1017,5 @@ section:has(.project-carousel-wrapper) {
 }
 
 [data-theme="dark"] .nav-logo:hover img {
-    filter: brightness(0) saturate(100%) invert(13%) sepia(89%) saturate(756%) hue-rotate(130deg) brightness(1.15);
+    filter: brightness(0) saturate(100%) invert(13%) sepia(89%) saturate(200%) hue-rotate(130deg) brightness(1.45);
 }

@@ -8,13 +8,19 @@ if (document.querySelector('.gallery-grid')) {
     // ============================================
 
     // Restore scroll position when returning to work page
-    window.addEventListener('load', () => {
-        const savedScrollPos = sessionStorage.getItem('workScrollPosition');
-        if (savedScrollPos) {
-            window.scrollTo(0, parseInt(savedScrollPos));
-            sessionStorage.removeItem('workScrollPosition');
+    // Use DOMContentLoaded so the scroll happens before images finish loading,
+    // preventing a flash where the page appears at the top then jumps down.
+    const savedScrollPos = sessionStorage.getItem('workScrollPosition');
+    if (savedScrollPos) {
+        sessionStorage.removeItem('workScrollPosition');
+        document.addEventListener('DOMContentLoaded', () => {
+            window.scrollTo({ top: parseInt(savedScrollPos), behavior: 'instant' });
+        });
+        // Fallback in case DOMContentLoaded already fired
+        if (document.readyState !== 'loading') {
+            window.scrollTo({ top: parseInt(savedScrollPos), behavior: 'instant' });
         }
-    });
+    }
 
     // ============================================
     // DROPDOWN FILTER FUNCTIONALITY
